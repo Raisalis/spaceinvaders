@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Enemy4
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
-  - {fileID: 489157940, guid: 4c5dc24d34ff4064cb3fc90801cd8c2e, type: 3}
-  - {fileID: 1620318482, guid: 4c5dc24d34ff4064cb3fc90801cd8c2e, type: 3}
-  m_MinSpeed: 1
-  m_MaxSpeed: 1
+  - {fileID: 1544460667, guid: d222c70ce0839c64e94c7a40c4750c3d, type: 3}
+  - {fileID: -27362288, guid: d222c70ce0839c64e94c7a40c4750c3d, type: 3}
+  - {fileID: 1735294690, guid: d222c70ce0839c64e94c7a40c4750c3d, type: 3}
+  m_MinSpeed: 2
+  m_MaxSpeed: 2
   m_AnimationStartTime: 0
   m_AnimationStartFrame: 0
   m_TileColliderType: 0

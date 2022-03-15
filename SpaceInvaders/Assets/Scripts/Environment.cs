@@ -63,13 +63,13 @@ public class Environment : MonoBehaviour
             newObject.transform.SetParent(enemyHandler);
             x += 1;
         }
-        x = -8f;
+        x = -6f;
         y = -2.5f;
         for(i = 0; i < 4; i++) {
             GameObject newObject = Instantiate(shieldPrefab);
             newObject.transform.position = new Vector3(x, y, 0);
             newObject.transform.SetParent(shieldHandler);
-            x += 5;
+            x += 4f;
         }
 
         x = 0f;
@@ -84,11 +84,13 @@ public class Environment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         // TODO: Hide Score Guide after 10 seconds
         currentTime = (int)(timer - Time.fixedTime);
         if(currentTime <= 0 && visible) {
             guide.SetActive(false);
             visible = false;
         } 
+        */
     }
 }

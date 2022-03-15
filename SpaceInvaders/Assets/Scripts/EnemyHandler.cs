@@ -35,6 +35,11 @@ public class EnemyHandler : MonoBehaviour
             }
             timer -= Time.deltaTime;
         }
+
+        // End game if no more enemies
+        if(this.gameObject.GetComponent<Transform>().childCount == 0) {
+            scoring.gameOver();
+        }
     }
 
     void FixedUpdate()
@@ -66,9 +71,9 @@ public class EnemyHandler : MonoBehaviour
         int check = (int)Random.Range(0, 2);
         float x = 0f;
         if(check == 0) {
-            x = -9f;
+            x = -7.5f;
         } else {
-            x = 9f;
+            x = 7.5f;
         }
         float y = 3.5f;
         GameObject newObject = Instantiate(enemy4Prefab);

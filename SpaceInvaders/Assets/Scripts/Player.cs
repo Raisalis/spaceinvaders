@@ -7,11 +7,14 @@ public class Player : MonoBehaviour
     public Transform environment;
     public GameObject playerBulletPrefab;
     public ScoreManager scoring;
+
+    private Animator playerAnimator;
     // Start is called before the first frame update
     void Start()
     {
         environment = GameObject.Find("Environment").GetComponent<Transform>();
         scoring = GameObject.Find("ScoringManager").GetComponent<ScoreManager>();
+        playerAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -40,6 +43,7 @@ public class Player : MonoBehaviour
             }
         }
         if(!fired) {
+            playerAnimator.SetTrigger("Fire");
             GameObject newObject = Instantiate(playerBulletPrefab);
             newObject.transform.position = new Vector3(this.transform.position.x, this.transform.position.y + .25f, 0);
             newObject.transform.SetParent(environment);
@@ -47,7 +51,8 @@ public class Player : MonoBehaviour
     }
 
     public void hit() {
+        playerAnimator.SetTrigger("Death");
         scoring.gameOver();
-        Destroy(this.gameObject);
+        Destroy(this.gameObject, 1);      
     }
 }

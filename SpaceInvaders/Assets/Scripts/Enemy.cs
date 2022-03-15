@@ -11,11 +11,14 @@ public class Enemy : MonoBehaviour
     public EnemyHandler handler;
     private float timer = 3;
 
+    private Animator enemyAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
         environment = GameObject.Find("Environment").GetComponent<Transform>();
         handler = GameObject.Find("Enemies").GetComponent<EnemyHandler>();
+        enemyAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -32,6 +35,7 @@ public class Enemy : MonoBehaviour
     }
 
     public void hit() {
+        enemyAnimator.SetTrigger("Death");
         int value = 0;
         if(this.gameObject.name == "Enemy1(Clone)") {
             value = 20;
@@ -45,12 +49,16 @@ public class Enemy : MonoBehaviour
         }
         handler.addScore(value);
         handler.increaseSpeed();
-        Destroy(this.gameObject);
+        Destroy(this.gameObject, 1);
     }
 
     public void shoot() {
 
         // TODO: Randomly choose type of bullet
+
+        // Animation
+        enemyAnimator.SetTrigger("Fire");
+
         GameObject newObject = Instantiate(enemyBullet1);
         newObject.transform.position = new Vector3(this.transform.position.x, this.transform.position.y - .25f, 0);
         newObject.transform.SetParent(environment);

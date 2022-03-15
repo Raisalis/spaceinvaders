@@ -97,6 +97,7 @@ MonoBehaviour:
   enemyBullet1: {fileID: 5858731078470811063, guid: 6cd98905dc999e34ea30991af7b3cda6, type: 3}
   enemyBullet2: {fileID: 0}
   environment: {fileID: 0}
+  handler: {fileID: 0}
 --- !u!50 &-4518678910878680318
 Rigidbody2D:
   serializedVersion: 4
@@ -191,7 +192,7 @@ SpriteRenderer:
   m_SortingLayerID: 1779084983
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1139365927, guid: 4c5dc24d34ff4064cb3fc90801cd8c2e, type: 3}
+  m_Sprite: {fileID: -1387119426, guid: d222c70ce0839c64e94c7a40c4750c3d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

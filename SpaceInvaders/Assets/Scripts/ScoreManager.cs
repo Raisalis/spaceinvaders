@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -46,5 +47,11 @@ public class ScoreManager : MonoBehaviour
 
     public void gameOver() {
         Debug.Log("Game Over!");
+        StartCoroutine(Wait());
+    }
+
+    IEnumerator Wait() {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("CreditsFromGame");
     }
 }

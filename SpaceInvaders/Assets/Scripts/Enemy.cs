@@ -35,6 +35,8 @@ public class Enemy : MonoBehaviour
     }
 
     public void hit() {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
         enemyAnimator.SetTrigger("Death");
         int value = 0;
         if(this.gameObject.name == "Enemy1(Clone)") {

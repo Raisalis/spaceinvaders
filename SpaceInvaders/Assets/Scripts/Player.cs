@@ -51,6 +51,8 @@ public class Player : MonoBehaviour
     }
 
     public void hit() {
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
         playerAnimator.SetTrigger("Death");
         scoring.gameOver();
         Destroy(this.gameObject, 1);      

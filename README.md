@@ -22,6 +22,7 @@
 - Added Main Menu and Credits Scenes.
   - One Credits from Main Menu, another from the Game. The game one has no button and automatically returns to the Main Menu after 5 seconds.
 - Fixed End Zones and overall spacing of game elements.
+- Added some death sounds for enemies and player.
 
 ### Other Information
 - Sprites made by me based on original game because I couldn't find any good sprite sheets.
